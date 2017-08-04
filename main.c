@@ -5,6 +5,7 @@
 
 #include <stdio.h> //Including all needed modules
 #include <unistd.h>
+#include "update.h"
 
 #define RED "\x1B[31m" //Colour codes
 #define GREEN "\x1B[32m"
@@ -31,8 +32,35 @@ void menu() {
 	printf(WHITE"["GREEN"+"WHITE"] "GREEN"MENU\n"COLOUR_RESET);
 	printf(WHITE"["RED"0"WHITE"] "GREEN"QUIT\n"COLOUR_RESET);
 	printf(WHITE"["RED"1"WHITE"] "GREEN"CLEAR SCREEN\n"COLOUR_RESET);
-	printf(WHITE"["RED"2"WHITE"] "GREEN"ROOT THIS SERVER\n"COLOUR_RESET);
-	printf(WHITE"["RED"3"WHITE"] "GREEN"ROOT VIA SSH\n"COLOUR_RESET);
+	printf(WHITE"["RED"2"WHITE"] "GREEN"UPDATE THIS SERVER\n"COLOUR_RESET);
+	printf(WHITE"["RED"3"WHITE"] "GREEN"ROOT THIS SERVER\n"COLOUR_RESET);
+	printf(WHITE"["RED"4"WHITE"] "GREEN"ROOT VIA SSH\n"COLOUR_RESET);
+}
+
+void updateSystem() {
+	system("yum update -y");
+}
+
+void installDependancies() {
+	system("yum install perl -y");
+	system("yum install gcc -y");
+	system("yum install gcc-c++ -y");
+	system("yum install cpan -y");
+	system("yum install httpd -y");
+	system("yum install httpd -y");
+	system("yum install tftp -y");
+	system("yum install screen -y");
+	system("yum install nano -y");
+	system("yum install unzip -y");
+	system("yum install tar -y;");
+	system("yum install wget -y");
+	system("yum install curl -y");
+	system("yum install busybox -y");
+	system("yum install python-paramiko -y");
+	system("yum install dstat -y");
+	system("yum install nc -y");
+	system("yum install dos2unix -y");
+	system("yum install python -y");
 }
 
 int main() {
@@ -57,11 +85,23 @@ int main() {
 		}
 
 		else if(choice == 2) {
-			printf("OPTION 2\n");
+			clearPage();
+			printf(WHITE"["GREEN"+"WHITE"] "GREEN"UPDATING SYSTEM\n"COLOUR_RESET);
+			sleep(2);
+			updateSystem();
+			clearPage();
+			printf(WHITE"["GREEN"+"WHITE"] "GREEN"INSTALLING DEPENDENCIES\n"COLOUR_RESET);
+			sleep(2);
+			installDependancies();
+			clearPage();
 		}
 
 		else if(choice == 3) {
 			printf("OPTION 3\n");
+		}
+
+		else if(choice == 4) {
+			printf("OPTION 4\n");
 		}
 
 		else {
