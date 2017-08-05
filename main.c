@@ -34,7 +34,6 @@ void menu() {
 	printf(WHITE"["RED"1"WHITE"] "GREEN"CLEAR SCREEN\n"COLOUR_RESET);
 	printf(WHITE"["RED"2"WHITE"] "GREEN"UPDATE THIS SERVER\n"COLOUR_RESET);
 	printf(WHITE"["RED"3"WHITE"] "GREEN"ROOT THIS SERVER\n"COLOUR_RESET);
-	printf(WHITE"["RED"4"WHITE"] "GREEN"ROOT VIA SSH\n"COLOUR_RESET);
 }
 
 void updateSystem() {
@@ -61,6 +60,10 @@ void installDependancies() {
 	system("yum install nc -y");
 	system("yum install dos2unix -y");
 	system("yum install python -y");
+}
+
+void rootServer() {
+	system("sh root.sh");
 }
 
 int main() {
@@ -97,7 +100,14 @@ int main() {
 		}
 
 		else if(choice == 3) {
-			printf("OPTION 3\n");
+			clearPage();
+			printf(WHITE"["GREEN"+"WHITE"] "GREEN"ROOTING THIS SERVER\n"COLOUR_RESET);
+			sleep(2);
+			rootServer();
+			clearPage();
+			printf(WHITE"["GREEN"+"WHITE"] "GREEN"SERVER HAS BEEN ROOTED\n"COLOUR_RESET);
+			sleep(2);
+			clearPage();
 		}
 
 		else if(choice == 4) {
