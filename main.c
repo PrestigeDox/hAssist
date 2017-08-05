@@ -5,7 +5,6 @@
 
 #include <stdio.h> //Including all needed modules
 #include <unistd.h>
-#include "update.h"
 
 #define RED "\x1B[31m" //Colour codes
 #define GREEN "\x1B[32m"
@@ -17,6 +16,9 @@
 #define COLOUR_RESET "\x1b[0m" //Enabling colour reset to original server colour
 
 int choice;
+int passwordSize;
+int passwordCounter;
+char passwordRand;
 
 void clearPage() {
 	printf("\033[2J\033[1;1H");
@@ -34,6 +36,7 @@ void menu() {
 	printf(WHITE"["RED"1"WHITE"] "GREEN"CLEAR SCREEN\n"COLOUR_RESET);
 	printf(WHITE"["RED"2"WHITE"] "GREEN"UPDATE THIS SERVER\n"COLOUR_RESET);
 	printf(WHITE"["RED"3"WHITE"] "GREEN"ROOT THIS SERVER\n"COLOUR_RESET);
+	printf(WHITE"["RED"4"WHITE"] "GREEN"RANDOM PASSWORD GENERATOR\n"COLOUR_RESET);
 }
 
 void updateSystem() {
@@ -64,6 +67,21 @@ void installDependancies() {
 
 void rootServer() {
 	system("sh root.sh");
+}
+
+void passwordGenerator() {
+	passwordCounter = 0;
+	srandom(time(NULL));
+
+	printf(WHITE"["GREEN"+"WHITE"] "GREEN"ENTER AMOUNT OF LETTERS\n>>> "COLOUR_RESET);
+	scanf("%d", &passwordSize);
+
+	while(passwordCounter < passwordSize) {
+		passwordRand = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"[random () % 62];
+        printf("%c", passwordRand);
+        passwordCounter++;
+	}
+	printf("\n");
 }
 
 int main() {
@@ -111,7 +129,23 @@ int main() {
 		}
 
 		else if(choice == 4) {
-			printf("OPTION 4\n");
+			clearPage();
+			printf(WHITE"["GREEN"+"WHITE"] "GREEN"RANDOM PASSWORD GENERATOR\n"COLOUR_RESET);
+			sleep(2);
+			clearPage();
+			passwordGenerator();
+			sleep(2);
+			printf(WHITE"\n["GREEN"+"WHITE"] "GREEN"PASSWORD DESTRUCTIO  PROCESS INITIATED\n"COLOUR_RESET);
+			sleep(1);
+			printf(WHITE"["GREEN"+"WHITE"] "GREEN"15 SECONDS TO COPY PASSWORD\n"COLOUR_RESET);
+			sleep(5);
+			printf(WHITE"["GREEN"+"WHITE"] "GREEN"10 SECONDS TO COPY PASSWORD\n"COLOUR_RESET);
+			sleep(5);
+			printf(WHITE"["GREEN"+"WHITE"] "GREEN"5 SECONDS TO COPY PASSWORD\n"COLOUR_RESET);
+			sleep(5);
+			printf(WHITE"["GREEN"+"WHITE"] "GREEN"TIME UP - PASSWORD DESTOYED\n"COLOUR_RESET);
+			sleep(2);
+			clearPage();
 		}
 
 		else {
