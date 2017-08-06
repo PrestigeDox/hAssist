@@ -84,6 +84,15 @@ void passwordGenerator() {
 	printf("\n");
 }
 
+int contributerList() {
+	printf(WHITE"["GREEN"+"WHITE"] "GREEN"SKYPE ~ PrestigeDox\n"COLOUR_RESET);
+	sleep(1);
+	printf(WHITE"["GREEN"+"WHITE"] "GREEN"TWITTER ~ @PrestigeDox\n"COLOUR_RESET);
+	sleep(1);
+	printf(WHITE"["GREEN"+"WHITE"] "GREEN"DISCORD ~ PrestigeDox#2258\n"COLOUR_RESET);
+	sleep(1);
+}
+
 int main() {
 	printf(WHITE"["GREEN"+"WHITE"] "GREEN"Welcome to hAssist!\n\n"COLOUR_RESET);
 	sleep(1);
@@ -135,7 +144,7 @@ int main() {
 			clearPage();
 			passwordGenerator();
 			sleep(2);
-			printf(WHITE"\n["GREEN"+"WHITE"] "GREEN"PASSWORD DESTRUCTIO  PROCESS INITIATED\n"COLOUR_RESET);
+			printf(WHITE"\n["GREEN"+"WHITE"] "GREEN"PASSWORD DESTRUCTION PROCESS INITIATED\n"COLOUR_RESET);
 			sleep(1);
 			printf(WHITE"["GREEN"+"WHITE"] "GREEN"15 SECONDS TO COPY PASSWORD\n"COLOUR_RESET);
 			sleep(5);
@@ -143,7 +152,7 @@ int main() {
 			sleep(5);
 			printf(WHITE"["GREEN"+"WHITE"] "GREEN"5 SECONDS TO COPY PASSWORD\n"COLOUR_RESET);
 			sleep(5);
-			printf(WHITE"["GREEN"+"WHITE"] "GREEN"TIME UP - PASSWORD DESTOYED\n"COLOUR_RESET);
+			printf(WHITE"["GREEN"+"WHITE"] "GREEN"TIME UP - PASSWORD DESTROYED\n"COLOUR_RESET);
 			sleep(2);
 			clearPage();
 		}
@@ -151,6 +160,9 @@ int main() {
 		else {
 			//
 		}
-
 	}
+
+	clearPage();
+	contributerList();
+
 }
