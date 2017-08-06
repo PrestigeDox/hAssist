@@ -100,7 +100,7 @@ int main() {
 
 		if(choice == 1) {
 			clearPage();
-			printf(WHITE"["GREEN"+"WHITE"] "GREEN"CLEARNING SCREEN\n"COLOUR_RESET);
+			printf(WHITE"["GREEN"+"WHITE"] "GREEN"CLEARING SCREEN\n"COLOUR_RESET);
 			sleep(2);
 			clearPage();
 		}
