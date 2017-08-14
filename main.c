@@ -168,30 +168,30 @@ int main() { //Main function
 		//Failed Banner
 		else {
 			printf("\x1b[1;31m              _________                   _______  \n");
-	        printf("\x1b[1;33m    _-----____/   ========================|______| \n");
-	        printf("\x1b[1;32m    |           ______________/                    \n");
-	        printf("\x1b[1;34m    |    ___--_/(_)       ^                        \n");
-	        printf("\x1b[1;35m    |___ ---                                       \n");
-	        printf(GREEN"Get of this hAssist!\n");
-	        printf(GREEN"This is kept private and access is only for the owner of this server\n"COLOUR_RESET);
-	        sleep(3);
-	        clearPage();
-	        return 0;
+			printf("\x1b[1;33m    _-----____/   ========================|______| \n");
+			printf("\x1b[1;32m    |           ______________/                    \n");
+			printf("\x1b[1;34m    |    ___--_/(_)       ^                        \n");
+			printf("\x1b[1;35m    |___ ---                                       \n");
+		        printf(GREEN"Get of this hAssist!\n");
+		        printf(GREEN"This is kept private and access is only for the owner of this server\n"COLOUR_RESET);
+		        sleep(3);
+		        clearPage();
+		        return 0;
 		}
 		
 	}
 	//Failed Banner
 	else {
 		printf("\x1b[1;31m              _________                   _______  \n");
-        printf("\x1b[1;33m    _-----____/   ========================|______| \n");
-        printf("\x1b[1;32m    |           ______________/                    \n");
-        printf("\x1b[1;34m    |    ___--_/(_)       ^                        \n");
-        printf("\x1b[1;35m    |___ ---                                       \n");
-        printf(GREEN"Get of this hAssist!\n");
-        printf(GREEN"This is kept private and access is ONLY for the owner of this server\n"COLOUR_RESET);
-        sleep(3);
-	    clearPage();
-        return 0;
+		printf("\x1b[1;33m    _-----____/   ========================|______| \n");
+		printf("\x1b[1;32m    |           ______________/                    \n");
+		printf("\x1b[1;34m    |    ___--_/(_)       ^                        \n");
+		printf("\x1b[1;35m    |___ ---                                       \n");
+		printf(GREEN"Get of this hAssist!\n");
+		printf(GREEN"This is kept private and access is ONLY for the owner of this server\n"COLOUR_RESET);
+		sleep(3);
+		clearPage();
+        	return 0;
 	}
 
 	printf(WHITE"["GREEN"+"WHITE"] "GREEN"Welcome to hAssist!\n\n"COLOUR_RESET); //Initial welcome
